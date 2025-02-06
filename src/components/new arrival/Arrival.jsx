@@ -88,7 +88,7 @@ export default function Arrival() {
             </Box>
             <Box 
                 sx={{
-                    paddingInline: "23.41px",
+                    paddingInline: "37px",
                     gap: "38.6px",  
                     width: "1167px",
                     height: "319.67px",
