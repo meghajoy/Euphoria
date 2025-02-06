@@ -4,7 +4,7 @@ import {Box} from '@mui/material'
 export default function Wrapper({children, disablePadding = false}) {
   return (
     <Box
-        sx={{paddingInline : disablePadding ? 0:"102px",
+        sx={{paddingInline : disablePadding ? 0:"100px",
             display:"flex",
             flexDirection: 'row',
             alignItems: 'center',       

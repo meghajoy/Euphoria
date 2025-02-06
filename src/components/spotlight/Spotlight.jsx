@@ -6,8 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Button from '@mui/material/Button'
 import SpotlightImg1 from '../../images/spotlightimg.jpg'
 import SpotlightImg2 from '../../images/explore1.jpg'
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'; 
 import FrontArrow from '../../images/rightarrow.png'
 import BackArrow from '../../images/leftarrow.png'
 
@@ -63,15 +61,15 @@ export default function Spotlight() {
           <Box
           sx={{
             width: '129px',
-            height: '12px',
+            height: '10px',
             display: 'flex',
             justifyContent: 'space-between'
           }}
           >
             <Box
               sx={{
-                width: '80px',
-                height: '12px',
+                width: '60px',
+                height: '10px',
                 backgroundColor: i === 0 ? 'white' : '#ccc',
                 borderRadius: '12px 0px 0px 12px',
                 opacity: i === 0 ? 1 : 0.5,
@@ -80,8 +78,8 @@ export default function Spotlight() {
             />
             <Box
               sx={{
-                width: '80px',
-                height: '12px',
+                width: '60px',
+                height: '10px',
                 backgroundColor: i === 1 ? 'white' : '#ccc',
                 borderRadius: '0px 12px 12px 0px',
                 transition: 'opacity 0.3s ease-in-out'

@@ -79,4 +79,5 @@
 
 body {
   padding-inline: "102px";
+  overflow-x: "hidden";
 }

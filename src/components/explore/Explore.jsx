@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import Img1 from '../../images/explore1.jpg'
 import Img2 from '../../images/explore2.jpg'
 import styled from 'styled-components'
@@ -7,19 +7,41 @@ import Wrapper from '../../wrapper/Wrapper'
 
 const images = [
     {
-        display: Img1
+        display: Img1,
+        up: "Low Price",
+        mid: "High Coziness",
+        mid2: "UPTO 50% OFF",
+        btn: "Explore Item",
     },
     {
-        display: Img2
+        display: Img2,
+        up: "Beyoung Presents",
+        mid: "Breezy Summer Style",
+        mid2: "UPTO 50% OFF",
+        btn: "Explore Item",
     },
 ]
 
-const BoxImage = styled("img")(({theme})=>({
+const BoxImage = styled(Box)(({theme})=>({
     display: 'flex',
-    width: "604.93px",
-    height: "356.2px",
+    justifyContent: 'center',
+    flexDirection: 'column',
+    height: "356px",
+    width: "604px",
     borderRadius: '8px',
-    objectFit: 'cover',
+    boxShadow: "10px",
+    position: 'relative',
+}))
+
+const Overlay = styled(Box)(()=>({
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    padding: "5%",
+    gap: "20px",
+    width: "50%",
+    height: "100%",
 }))
 
 export default function Explore() {
@@ -28,13 +50,46 @@ export default function Explore() {
         <Box
             sx={{
                 display: 'flex',
+                width:"1250px",
+                gap:'30px',
                 justifyContent: 'space-between',
-                flexWrap: 'wrap',
+                alignItems: "center",
+                //flexWrap: 'wrap',
                 paddingTop: '10%',
             }}
         >
             {images.map((item,index)=>(
-                <BoxImage key={index} src={item.display} alt="Image"/>
+                <BoxImage key={index}
+                    sx={{
+                        backgroundImage: `url(${item.display})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "top",
+                        height: "356px",
+                        width: "604px",
+                        borderRadius: '12px',
+                        boxShadow: "2px 2px 10px 0px #00000066",
+
+                    }}
+                >
+                    <Overlay
+                    >
+                        <Typography variant='h6' sx={{color: "white", fontFamily: "poppinssemibold", fontSize: "18px"}}>{item.up}</Typography>
+                        <Typography variant='h4' sx={{color: "white", fontFamily: "poppinssemibold", fontSize: "34px"}}>{item.mid}</Typography>
+                        <Typography variant='h6' sx={{color: "white", fontFamily: "poppinsregular", fontSize: "18px"}}>{item.mid2}</Typography>
+                        <Button variant="text" sx={{
+                            padding: '0px',
+                            color: "white",
+                            textDecoration: "underline",
+                            textTransform: "none",
+                            fontFamily: "poppinssemibold", 
+                            fontSize: "20px",
+                            lineHeight: '30px',
+                            '&:hover':{
+                                backgroundColor: 'transparent',
+                            }
+                        }}>{item.btn}</Button>
+                    </Overlay>
+                </BoxImage>
             ))}
         </Box>
     </Wrapper>
