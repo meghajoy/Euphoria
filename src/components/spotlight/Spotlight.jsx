@@ -1,13 +1,13 @@
 import React from 'react'
-import {Box, IconButton, Typography, styled} from '@mui/material'
+import {Box, IconButton, Typography} from '@mui/material'
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Button from '@mui/material/Button'
 import SpotlightImg1 from '../../images/spotlightimg.jpg'
 import SpotlightImg2 from '../../images/explore1.jpg'
 import FrontArrow from '../../images/rightarrow.png'
 import BackArrow from '../../images/leftarrow.png'
+import ShopNow from '../../shop now button/ShopNow';
 
 const images = [SpotlightImg1, SpotlightImg2];
 
@@ -133,22 +133,7 @@ export default function Spotlight() {
                   fontFamily: "poppinsmedium"
                 }}
               >cool / colorful / comfy</Typography>
-              <Button
-                sx={{
-                  backgroundColor: "#FFFFFF",
-                  color: "#3C4242",
-                  height: "61px",
-                  width: "250px",
-                  borderRadius: "8px", 
-                  textTransform: "none",  //Fixes capitalization issue
-                  boxShadow: "none",      //Removes shadow
-                  fontFamily: "poppinssemibold",
-                  fontSize: "20px",
-                  "&:hover": {
-                    boxShadow: "none",
-                  }
-                }}
-              >Shop Now</Button>
+              <ShopNow />
             </Box>
           </Box>
         ))}
