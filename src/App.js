@@ -1,9 +1,9 @@
 import "./App.css";
-import Header from "./components/header/Header";
-import Spotlight from "./components/spotlight/Spotlight";
-import Arrival from "./components/new arrival/Arrival";
-import Explore from "./components/explore/Explore";
-import MiniSpotlight from "./components/minispotlight/MiniSpotlight";
+import Header from "./components/includes/Header";
+import Spotlight from "./components/screens/Spotlight";
+import Arrival from "./components/screens/Arrival";
+import Explore from "./components/screens/Explore";
+import MiniSpotlight from "./components/screens/MiniSpotlight";
 
 function App() {
   return (
