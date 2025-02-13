@@ -1,18 +1,15 @@
 import "./App.css";
-import Header from "./components/includes/Header";
-import Spotlight from "./components/screens/Spotlight";
-import Arrival from "./components/screens/Arrival";
-import Explore from "./components/screens/Explore";
-import MiniSpotlight from "./components/screens/MiniSpotlight";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./components/screens/Main";
 
 function App() {
   return (
     <>
-      <Header />
-      <Spotlight />
-      <Explore />
-      <Arrival />
-      <MiniSpotlight />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

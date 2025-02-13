@@ -10,6 +10,7 @@ import New4 from '../../assets/images/img-4.jpg'
 import SlidderArrow from '../customs/SlidderArrow'
 import ArrowRight from '../../assets/images/arrow-right.svg'
 import ArrowLeft from '../../assets/images/arrow-left.svg'
+import Heading from '../customs/Heading';
 
 const Wrapper = styled(Box)(()=>({
     paddingInline: '100px',
@@ -65,27 +66,7 @@ export default function Arrival() {
         }}
     >
         <Wrapper>
-            <Box
-                sx={{
-                    gap:'20px',
-                    alignItems: "center",
-                    display: 'flex',
-                }}
-            >
-                <Box sx={{
-                    width: "6px",
-                    height: "30px",
-                    borderRadius: "10px",
-                    backgroundColor: "#8A33FD", 
-                }}/>
-                <Typography
-                    sx={{
-                        color: "#3C4242",
-                        fontSize: "34px",
-                        fontFamily: "poppinssemibold",
-                    }}
-                >New Arrival</Typography>
-            </Box>
+            <Heading text="New Arrival"/>
             <Box 
                 sx={{
                     paddingInline: "37px",

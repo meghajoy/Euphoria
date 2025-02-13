@@ -12,7 +12,7 @@
             "/assets/images/img-8.jpg",
             "/assets/images/img-9.jpg",
             "/assets/images/img-10.jpg",
-            "/assets/images/Rectangle22.jpg",
+            "/assets/images/Rectangle22.png",
             "/assets/images/img-11.jpg"
           ]
         },
@@ -27,7 +27,7 @@
             "/assets/images/img-8.jpg",
             "/assets/images/img-9.jpg",
             "/assets/images/img-10.jpg",
-            "/assets/images/Rectangle22.jpg",
+            "/assets/images/Rectangle22.png",
             "/assets/images/img-11.jpg"
           ]
         },
@@ -42,7 +42,7 @@
             "/assets/images/img-8.jpg",
             "/assets/images/img-9.jpg",
             "/assets/images/img-10.jpg",
-            "/assets/images/Rectangle22.jpg",
+            "/assets/images/Rectangle22.png",
             "/assets/images/img-11.jpg"
           ]
         },
@@ -58,7 +58,7 @@
             "/assets/images/img-8.jpg",
             "/assets/images/img-9.jpg",
             "/assets/images/img-10.jpg",
-            "/assets/images/Rectangle22.jpg",
+            "/assets/images/Rectangle22.png",
             "/assets/images/img-11.jpg"
           ]
         },
@@ -73,7 +73,7 @@
             "/assets/images/img-8.jpg",
             "/assets/images/img-9.jpg",
             "/assets/images/img-10.jpg",
-            "/assets/images/Rectangle22.jpg",
+            "/assets/images/Rectangle22.pngg",
             "/assets/images/img-11.jpg"
           ]
         },
@@ -88,13 +88,13 @@
             "/assets/images/img-8.jpg",
             "/assets/images/img-9.jpg",
             "/assets/images/img-10.jpg",
-            "/assets/images/Rectangle22.jpg",
+            "/assets/images/Rectangle22.png",
             "/assets/images/img-11.jpg"
           ]
         },
         {
           "id": 7,
-          "image": "/assets/images/Rectangle22.jpg",
+          "image": "/assets/images/Rectangle22.png",
           "category": "Activewear",
           "detail_images": [
             "/assets/images/img-5.jpg",
@@ -103,7 +103,7 @@
             "/assets/images/img-8.jpg",
             "/assets/images/img-9.jpg",
             "/assets/images/img-10.jpg",
-            "/assets/images/Rectangle22.jpg",
+            "/assets/images/Rectangle22.png",
             "/assets/images/img-11.jpg"
           ]
         },
@@ -118,7 +118,7 @@
             "/assets/images/img-8.jpg",
             "/assets/images/img-9.jpg",
             "/assets/images/img-10.jpg",
-            "/assets/images/Rectangle22.jpg",
+            "/assets/images/Rectangle22.png",
             "/assets/images/img-11.jpg"
           ]
         }
