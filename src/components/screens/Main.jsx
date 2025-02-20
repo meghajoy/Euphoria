@@ -8,6 +8,8 @@ import Men from "./Men";
 import Women from './Women';
 import Limelight from './Limelight';
 import Brands from './Brands';
+import Feedback from './Feedback';
+import Footer from '../includes/Footer';
 
 
 export default function Main() {
@@ -22,6 +24,8 @@ export default function Main() {
       <Women />
       <Brands />
       <Limelight />
+      <Feedback />  
+      <Footer />  
     </>  
   )
 }

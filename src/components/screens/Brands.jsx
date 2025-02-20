@@ -42,14 +42,14 @@ export default function Brands() {
                 alignItems: "center",
                 borderRadius: "12px",
                 }}>
-                <Box sx={{display: 'flex', flexDirection: 'column', gap: "20%"}}>
+                <Box sx={{display: 'flex', flexDirection: 'column'}}>
                     <Box
-                        sx={{display: 'flex', flexDirection: 'column', gap: "5%", alignItems: "center",}}
+                        sx={{display: 'flex', flexDirection: 'column', gap: "5%", alignItems: "center", paddingBottom: "10%"}}
                     >
                         <Typography sx={{color: "#FFFFFF", fontSize: "50px", fontFamily: "poppinsbold"}}>Top Brands Deal</Typography>
                         <Typography sx={{color: "#FFFFFF", fontSize: "22px", fontFamily: "poppinslight"}}>Up To <span style={{color: "#FBD103"}}>60%</span> off on brands</Typography>
                     </Box>
-                    <Box sx={{display: "flex", gap: "5%"}}>
+                    <Box sx={{display: "flex", gap: "5%", paddingBottom: "5%"}}>
                         {logos.map((item,index)=>(
                             <Box key={index}
                                 sx={{
