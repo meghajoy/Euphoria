@@ -149,6 +149,7 @@ export default function Footer() {
                         <img src="/assets/images/arrow-down.svg" alt="Arrow Down Image" />
                     </Box>
                 </Box>
+                
                 <Box sx={{
                     fontSize: "18px", 
                     fontFamily: "poppinsmedium", 
