@@ -32,9 +32,9 @@ const handleWishlist = (id)=>{
         <Heading text="In The Limelight"/>
         <Box
           sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "50.27px",
+            display: "grid",
+            gridTemplateColumns: "auto auto auto auto",
+            gap: "26px",
           }}
         >
             {menProducts.map((item) =>(
@@ -60,10 +60,10 @@ const handleWishlist = (id)=>{
                           height: "32.36px",
                           width: "32.36px",
                           borderRadius: "50%",
-                          display: 'flex',
+                          display: "flex",
                           justifyContent: "center",
                           alignItems: "center",
-                          cursor: "pointer",
+  
                       }}
                       onClick={(e) =>{
                         e.preventDefault();

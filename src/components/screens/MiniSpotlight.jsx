@@ -14,13 +14,13 @@ export default function MiniSpotlight() {
                 paddingTop: '10%',
                 borderRadius: '12px',
                 height: '640px',
-                width: '1240px'
+                width: '1188px'
             }}
         >
             <Box
                 sx={{
                     backgroundImage: `url(${Img1})`,
-                    width: '614px'
+                    width: '590px'
                 }}
             >
                 <Box
@@ -52,7 +52,7 @@ export default function MiniSpotlight() {
                 </Box>
             </Box>
             <Box>
-                <img src={Img2} alt="Image" sx={{width:'626px'}}/>
+                <img src={Img2} alt="Image" sx={{width:'590px'}}/>
             </Box>
         </Box>
     </Wrapper>

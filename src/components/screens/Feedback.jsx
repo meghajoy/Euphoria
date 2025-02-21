@@ -54,11 +54,11 @@ export default function Feedback() {
 
   return (
    <Wrapper>
-        <Box sx={{paddingBlock: "100px", maxWidth: "1239px"}}>
+        <Box sx={{paddingBlock: "100px", maxWidth: "1174px"}}>
             <Heading text="Feedback"/>
             <Box sx ={{
                 paddingTop: "70px", 
-                width: "100%",
+                width: "95%",
                 "& .slick-list": { padding: "0 !important", margin: "0 -11.6px !important" }, // Fix spacing issue
                 "& .slick-track": { display: "flex", gap: "23.19px" },
                 "& .slick-slide": { display: "block" }, // Prevent centering issues
@@ -97,8 +97,8 @@ export default function Feedback() {
                                         fontSize: "14px", 
                                         color: "#807D7E",
                                         overflow: "hidden",
-                                        width:"350.4px", 
-                                        height: "125.6px",
+                                        width:"350px", 
+                                        height: "125px",
                                         paddingTop: "10px"
                                     }}
                                 >{item.review}</Typography>

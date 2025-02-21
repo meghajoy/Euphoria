@@ -21,9 +21,9 @@ export default function Women() {
         <Heading text="Categories For Women"/>
         <Box
           sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "50.27px",
+            display: "grid",
+            gridTemplateColumns: "auto auto auto auto",
+            gap: "30px",
           }}
         >
             {menProducts.map((item) =>(

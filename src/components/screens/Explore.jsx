@@ -54,7 +54,6 @@ export default function Explore() {
                 gap:'30px',
                 justifyContent: 'space-between',
                 alignItems: "center",
-                //flexWrap: 'wrap',
                 paddingTop: '10%',
             }}
         >

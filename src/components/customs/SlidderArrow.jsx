@@ -11,7 +11,7 @@ const CustomArrow = styled("button")(({theme,backgroundColor,direction})=>({
     border: "none",
     transform: "translateY(-50%)",
     zIndex: "2", 
-    ...(direction === "left" ? {left:20}: {right:20}),
+    ...(direction === "left" ? {left: -32}: {right: -32}),
     cursor: "pointer",
     [theme.breakpoints.down("md")]:{
         display: "none",

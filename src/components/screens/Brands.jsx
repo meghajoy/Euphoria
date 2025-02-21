@@ -33,9 +33,7 @@ export default function Brands() {
             <Box sx={{
                 backgroundColor: "#323232",
                 paddingBlock: "2%",
-                paddingInline: "14%",
-                // height: "357.17px",
-                // width: "1233px",
+                paddingInline: "12.5%",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
