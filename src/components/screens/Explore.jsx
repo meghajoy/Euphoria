@@ -50,7 +50,6 @@ export default function Explore() {
         <Box
             sx={{
                 display: 'flex',
-                width:"1250px",
                 gap:'30px',
                 justifyContent: 'space-between',
                 alignItems: "center",
@@ -64,7 +63,7 @@ export default function Explore() {
                         backgroundSize: "cover",
                         backgroundPosition: "top",
                         height: "356px",
-                        width: "604px",
+                        width: "572px",
                         borderRadius: '12px',
                         boxShadow: "2px 2px 10px 0px #00000066",
 

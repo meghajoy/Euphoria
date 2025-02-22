@@ -19,26 +19,26 @@ const Section = styled(Box)(()=>({
     display: 'flex',
     flexDirection: 'column',
     alignItems: "flex-start",
-    gap: "15px"
+    gap: "40px"
 }))
 
 const ListSection = styled(List)(()=>({
     display: 'flex',
     flexDirection: 'column',
     alignItems: "flex-start",
-    gap: "38px"
+    gap: "30px"
 }))
 
 const Headings = styled(Typography)(()=>({
     color: "#F6F6F6",
     fontFamily: "poppinsmedium",
-    fontSize: "28.58px"
+    fontSize: "26px"
 }))
 
 const Contents = styled(ListItem)(()=>({
     color: "#F6F6F6",
     fontFamily: "poppinslight",
-    fontSize: "18px",
+    fontSize: "16px",
     padding: "0", 
     listStyle: "none"
 }))
@@ -69,7 +69,7 @@ export default function Footer() {
     <Box sx={{bgcolor: "#3C4242"}}>
         <Wrapper>
             <Bigbox>
-                    <Box sx={{display: "flex", justifyContent: "space-around", paddingTop: "59px", gap:"80px", paddingLeft: "76px"}}>
+                    <Box sx={{display: "flex", justifyContent: "space-around", paddingTop: "59px", gap:"100px", paddingLeft: "76px"}}>
                         <Section>
                             <Headings variant="h3">Need Help</Headings>
                             <Link to={`/needhelp`} style={{textDecoration: "none", cursor: "pointer"}}>

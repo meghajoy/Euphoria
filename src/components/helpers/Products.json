@@ -5,6 +5,7 @@
           "id": 1,
           "image": "/assets/images/img-5.jpg",
           "category": "Shirts",
+          "section": "Men",
           "detail_images": [
             "/assets/images/img-5.jpg",
             "/assets/images/img-6.jpg",
@@ -20,6 +21,7 @@
           "id": 2,
           "image": "/assets/images/img-6.jpg",
           "category": "Printed T-Shirts",
+          "section": "Men",
           "detail_images": [
             "/assets/images/img-5.jpg",
             "/assets/images/img-6.jpg",
@@ -35,6 +37,7 @@
           "id": 3,
           "image": "/assets/images/img-7.jpg",
           "category": "Plain T-Shirt",
+          "section": "Men",
           "detail_images": [
             "/assets/images/img-5.jpg",
             "/assets/images/img-6.jpg",
@@ -48,9 +51,9 @@
         },
         {
           "id": 4,
-  
           "image": "/assets/images/img-8.jpg",
           "category": "Polo T-Shirt",
+          "section": "Men",
           "detail_images": [
             "/assets/images/img-5.jpg",
             "/assets/images/img-6.jpg",
@@ -66,6 +69,7 @@
           "id": 5,
           "image": "/assets/images/img-9.jpg",
           "category": "Hoodies & Sweetshirt",
+          "section": "Men",
           "detail_images": [
             "/assets/images/img-5.jpg",
             "/assets/images/img-6.jpg",
@@ -81,6 +85,7 @@
           "id": 6,
           "image": "/assets/images/img-10.jpg",
           "category": "Jeans",
+          "section": "Men",
           "detail_images": [
             "/assets/images/img-5.jpg",
             "/assets/images/img-6.jpg",
@@ -96,6 +101,7 @@
           "id": 7,
           "image": "/assets/images/Rectangle22.png",
           "category": "Activewear",
+          "section": "Men",
           "detail_images": [
             "/assets/images/img-5.jpg",
             "/assets/images/img-6.jpg",
@@ -111,6 +117,7 @@
           "id": 8,
           "image": "/assets/images/img-11.jpg",
           "category": "Boxers",
+          "section": "Men",
           "detail_images": [
             "/assets/images/img-5.jpg",
             "/assets/images/img-6.jpg",
@@ -128,6 +135,7 @@
           "id": 9,
           "image": "/assets/images/img-12.jpg",
           "category": "Hoodies & Sweetshirt",
+          "section": "Women",
           "detail_images": [
             "/assets/images/img-12.jpg",
             "/assets/images/img-13.jpg",
@@ -139,6 +147,7 @@
           "id": 10,
           "image": "/assets/images/img-13.jpg",
           "category": "Coats & Parkas",
+          "section": "Women",
           "detail_images": [
             "/assets/images/img-12.jpg",
             "/assets/images/img-13.jpg",
@@ -149,6 +158,7 @@
         {
           "id": 11,
           "image": "/assets/images/img-14.jpg",
+          "section": "Women",
           "category": "Tees & T-Shirt",
           "detail_images": [
             "/assets/images/img-12.jpg",
@@ -161,6 +171,7 @@
           "id": 12,
           "image": "/assets/images/img-15.jpg",
           "category": "Boxers",
+          "section": "Women",
           "detail_images": [
             "/assets/images/img-12.jpg",
             "/assets/images/img-13.jpg",
@@ -174,6 +185,7 @@
           "id": 13,
           "image": "/assets/images/img-16.jpg",
           "category": "Black Sweatshirt with...",
+          "section": "Men",
           "brand": "Jhanvis Brand",
           "price": "$123.00",
           "detail_images": [
@@ -187,6 +199,7 @@
           "id": 14,
           "image": "/assets/images/img-17.jpg",
           "category": "Line Pattern Black H..",
+          "section": "Women",
           "brand": "As's Brand",
           "price": "$37.00",
           "detail_images": [
@@ -200,6 +213,7 @@
           "id": 15,
           "image": "/assets/images/img-18.jpg",
           "category": "Black Shorts",
+          "section": "Men",
           "brand": "Mm's Brand",
           "price": "$37.00",
           "detail_images": [
@@ -213,6 +227,7 @@
           "id": 16,
           "image": "/assets/images/img-19.jpg",
           "category": "Levender Hoodie with...",
+          "section": "Women",
           "brand": "Nike's Brand",
           "price": "$119.00",
           "detail_images": [
@@ -228,6 +243,7 @@
           "id": 17,
           "image": "/assets/images/img-20.jpg",
           "category": "White T-Shirt",
+          "section": "Women",
           "brand": "Priyas Brand",
           "price": "$13.00",
           "detail_images": [
@@ -241,6 +257,7 @@
           "id": 18,
           "image": "/assets/images/img-22.jpg",
           "category": "Dark Green Sweatshirt",
+          "section": "Men",
           "brand": "Roboto’s  Brand",
           "price": "$127.00",
           "detail_images": [
@@ -254,6 +271,7 @@
           "id": 19,
           "image": "/assets/images/img-19.jpg",
           "category": "Levender Sweatshirt",
+          "section": "Women",
           "brand": "Jhanvi’s  Brand",
           "price": "$133.00",
           "detail_images": [
@@ -267,6 +285,7 @@
           "id": 20,
           "image": "/assets/images/img-24.jpg",
           "category": "Urban jacket",
+          "section": "Women",
           "brand": "Sagar’s  Brand",
           "price": "$79.00",
           "detail_images": [
@@ -283,6 +302,7 @@
           "image": "/assets/images/img-1.jpg",
           "category": "Knitted Joggers",
           "brand": "Jhanvis Brand",
+          "section": "Women",
           "price": "$123.00",
           "detail_images": [
             "/assets/images/img-1.jpg",
@@ -296,6 +316,7 @@
           "image": "/assets/images/img-3.jpg",
           "category": "Full Sleeve",
           "brand": "Jhanvis Brand",
+          "section": "Men",
           "price": "$123.00",
           "detail_images": [
             "/assets/images/img-1.jpg",
@@ -309,6 +330,7 @@
           "image": "/assets/images/img-4.jpg",
           "category": "Active T-Shirts",
           "brand": "Jhanvis Brand",
+          "section": "Women",
           "price": "$123.00",
           "detail_images": [
             "/assets/images/img-1.jpg",
@@ -322,6 +344,7 @@
           "image": "/assets/images/img-2.jpg",
           "category": "Urban Shirts",
           "brand": "Jhanvis Brand",
+          "section": "Women",
           "price": "$123.00",
           "detail_images": [
             "/assets/images/img-1.jpg",

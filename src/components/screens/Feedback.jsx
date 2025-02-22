@@ -60,7 +60,7 @@ export default function Feedback() {
                 paddingTop: "70px", 
                 width: "95%",
                 "& .slick-list": { padding: "0 !important", margin: "0 -11.6px !important" }, // Fix spacing issue
-                "& .slick-track": { display: "flex", gap: "23.19px" },
+                "& .slick-track": { display: "flex", gap: "23.19px", transform: "translate3d(-1221px, 0px, 0px)" },
                 "& .slick-slide": { display: "block" }, // Prevent centering issues
             }}>
                 <Slider {...settings} key={feeds.length} >
