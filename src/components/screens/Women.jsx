@@ -73,7 +73,7 @@ export default function Women() {
                         >Explore Now!</Typography>
                     </Box>
                     <Box>
-                        <img src={Arrow} alt="Arrow image" sx={{cursor:"pointer"}}/>
+                        <img src={Arrow} alt="Arrow" sx={{cursor:"pointer"}}/>
                     </Box>
                   </Box>
                 </Box>

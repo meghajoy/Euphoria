@@ -17,6 +17,14 @@ const Display = styled(Box)(()=>({
     display: 'flex',
 }))
 
+const Circle = styled(Box)(() => ({
+    borderRadius: '50%',
+    width: '22px',
+    height: '22px',
+    margin: '5px',
+    cursor: 'pointer',
+}))
+
 export default function Redirect() {
 
     const {id} = useParams();
@@ -28,7 +36,7 @@ export default function Redirect() {
    
 
     const [productImg, setProductImg] = useState([]);
-    const [circColor, setCircColor]= useState();
+    const [circColor, setCircColor]= useState({});
 
   useEffect(() => {
     if (product) {
@@ -64,19 +72,20 @@ export default function Redirect() {
 //           height: '20px',
 //         }}
 //       />
-    // const colorClick = (item)=>{
-    //     setCircColor((prev)=> {
-    //         ...prev,
-    //         [item] : !prev[item],
-    //     })
-    // }
+
+    const colorClick = (color)=>{
+        setCircColor((prev)=> ({
+            ...prev,
+            [color] : !prev[color]  
+        }))
+    }
 
   return (
     <Box>
         <Fullbox>
             <Display>
                 <Box>
-                    <img src={setProductImg} alt="Product Image" />
+                    <img src={productImg} alt={product.name} />
                 </Box>
                 <Box>
                     <Box>
@@ -107,9 +116,30 @@ export default function Redirect() {
                     </Box>
                     <Box>
                         <Typography>Colours Available </Typography>
-                        <Box>
 
+                        <Box display="flex">
+                            {["#3C4242", "#EDD146", "#EB84B0", "#9C1F35"].map((color, index) => (
+                                <Circle
+                                    key={index}
+                                    sx={{
+                                        backgroundColor: color,
+                                        border : circColor[color] ? "1px solid #3F4646" : "none",
+                                    }}
+                                    onClick={() => colorClick(color)} 
+                                />
+                            ))
+                        }
                         </Box>
+
+                        {/* <Box onClick={(e) =>{
+                            e.preventDefault();
+                            colorClick(Circle);
+                        }}>
+                            <Circle sx={{backgroundColor: "#3C4242"}}></Circle>
+                            <Circle sx={{backgroundColor: "#EDD146"}}></Circle>
+                            <Circle sx={{backgroundColor: "#EB84B0"}}></Circle>
+                            <Circle sx={{backgroundColor: "#9C1F35"}}></Circle>
+                        </Box> */}
                     </Box>
                 </Box>
             </Display>       
