@@ -17,6 +17,17 @@ const Display = styled(Box)(()=>({
     display: 'flex',
 }))
 
+const Left = styled(Box)(()=>({
+    width: "50%",
+    display: "flex",    
+}))
+
+const Right = styled(Box)(()=>({
+    width: "50%",
+    display: "flex", 
+    flexDirection: "column",   
+}))
+
 const Circle = styled(Box)(() => ({
     borderRadius: '50%',
     width: '22px',
@@ -25,6 +36,22 @@ const Circle = styled(Box)(() => ({
     cursor: 'pointer',
 }))
 
+const imgCircle = styled(Box)(()=>({
+    borderRadius: "50%", 
+    backgroundColor: "#F6F6F6", 
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "10px",
+    height: "10px",
+}))
+
+const DetailsBox = styled(Box)(()=>({
+    display: "flex", 
+    gap: "10px", 
+    justifyContent: "center", 
+    alignItems: "center"
+}))
 export default function Redirect() {
 
     const {id} = useParams();
@@ -53,26 +80,6 @@ export default function Redirect() {
         setProductImg(item)
     };
 
-
-//     const handleWishlist = (id)=>{
-//         setWishlist((prev) => ({
-//           ...prev,
-//           [id] : !prev[id],
-//         }))
-//       }
-//       onClick={(e) =>{
-//         e.preventDefault();
-//         handleWishlist(item.id);
-//       }}
-//   >
-//       <img src="/assets/images/wishlist.svg" alt="Wishlist image"
-//         style={{
-//           filter: wishlist[item.id] ? 'invert(16%) sepia(100%) saturate(7463%) hue-rotate(357deg) brightness(89%) contrast(112%)' : 'none',
-//           width: '20px',
-//           height: '20px',
-//         }}
-//       />
-
     const colorClick = (color)=>{
         setCircColor((prev)=> ({
             ...prev,
@@ -84,10 +91,10 @@ export default function Redirect() {
     <Box>
         <Fullbox>
             <Display>
-                <Box>
+                <Left>
                     <img src={productImg} alt={product.name} />
-                </Box>
-                <Box>
+                </Left>
+                <Right>
                     <Box>
                         <Typography>Shop</Typography>
                         <img src="/assets/images/right-arrow-light.svg" alt="Arrow icon" />
@@ -124,29 +131,70 @@ export default function Redirect() {
                                     sx={{
                                         backgroundColor: color,
                                         border : circColor[color] ? "1px solid #3F4646" : "none",
+                                        display: "flex",
+                                        gap: "2px"
                                     }}
                                     onClick={() => colorClick(color)} 
                                 />
                             ))
                         }
                         </Box>
-
-                        {/* <Box onClick={(e) =>{
-                            e.preventDefault();
-                            colorClick(Circle);
-                        }}>
-                            <Circle sx={{backgroundColor: "#3C4242"}}></Circle>
-                            <Circle sx={{backgroundColor: "#EDD146"}}></Circle>
-                            <Circle sx={{backgroundColor: "#EB84B0"}}></Circle>
-                            <Circle sx={{backgroundColor: "#9C1F35"}}></Circle>
-                        </Box> */}
                     </Box>
-                </Box>
+                    <Box sx={{display: "flex", gap: "10px", paddingBottom:"40px", borderBottom: "1px solid #BEBCBD"}}>
+                        <Box sx ={{
+                            display: "flex",
+                            gap:"20px",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            backgroundColor: "#8A33FD",
+                            padding: "10px",
+                            width: "159px",
+                            borderRadius: "8px",
+                            cursor: "pointer",
+                        }}>
+                            <img src="/assets/images/cart-1.svg" alt="Cart" />
+                            <Typography sx={{fontSize: "16px", fontFamily: "poppinsregular", color: "#FFFFFF"}}>Add to cart</Typography>
+                        </Box>
+                        <Box>
+                            <Typography sx={{
+                                display: "flex",
+                                gap:"20px",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                border: "1px solid #3C4242",
+                                padding: "10px",
+                                width: "80px",
+                                borderRadius: "8px",
+                            }}>{product.price}</Typography>
+                        </Box>
+                    </Box>
+                    <Box sx={{display: "flex", gap: "10px"}}>
+                        <Box sx={{display: "flex", flexDirection: "column", gap:"10px"}}>
+                            <DetailsBox>
+                                <imgCircle><img src="/assets/images/credit card.svg" alt="Credit Card" /></imgCircle>
+                                <Typography>Secure payment</Typography>
+                            </DetailsBox>
+                            <DetailsBox>
+                                <imgCircle><img src="/assets/images/Size&Fit.svg" alt="Size and Fit" /></imgCircle>
+                                <Typography>Size & Fit</Typography>
+                            </DetailsBox>
+                        </Box>
+                        <Box sx={{display: "flex", flexDirection: "column", gap:"10px"}}>
+                            <DetailsBox>
+                                <imgCircle><img src="/assets/images/truck.svg" alt="Free shipping" /></imgCircle>
+                                <Typography>Free shipping</Typography>
+                            </DetailsBox>
+                            <DetailsBox>
+                                <imgCircle><img src="/assets/images/Free-Shipping&Returns.svg" alt="Returns" /></imgCircle>
+                                <Typography>Free Shipping & Returns </Typography>
+                            </DetailsBox>
+                        </Box>
+                    </Box>
+                </Right>
             </Display>       
             <Box></Box>
             <Box></Box>
         </Fullbox>
     </Box>
-    
   )
 }
