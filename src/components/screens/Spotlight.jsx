@@ -45,18 +45,18 @@ export default function Spotlight() {
         pauseOnHover: true,
         nextArrow: <CustomArrow direction="right"/>,
         prevArrow: <CustomArrow direction="left"/>,
-        appendDots: dots =>(
-            <div style={{
-                position:"absolute",
-                bottom:'10px',
-                display: "flex",
-                width:'100%',
-                justifyContent: "center",
-                alignItems: "center"
-            }}>
-              <ul style={{ margin: 0, padding: 0, display: 'flex' }}>{dots}</ul>
-            </div>
-        ),
+        // appendDots: dots =>(
+        //     <div style={{
+        //         position:"absolute",
+        //         bottom:'10px',
+        //         display: "flex",
+        //         width:'100%',
+        //         justifyContent: "center",
+        //         alignItems: "center"
+        //     }}>
+        //       <ul style={{ margin: 0, padding: 0, display: 'flex' }}>{dots}</ul>
+        //     </div>
+        // ),
         customPaging: i => (
           <Box
           sx={{

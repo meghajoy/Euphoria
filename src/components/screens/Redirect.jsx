@@ -16,8 +16,12 @@ const Display = styled(Box)(()=>({
 }))
 
 const Left = styled(Box)(()=>({
-    width: "50%",
-    display: "flex",    
+    backgroundColor: "#F6F6F6", 
+    display: "flex",  
+    justifyContent: "end",
+    width: "50%", 
+    position: "relative",
+    overflow: "hidden"  
 }))
 
 const Right = styled(Box)(() => ({
@@ -45,7 +49,8 @@ const SizeBox = styled(Box)(()=>({
    display: "flex",
    justifyContent: "center",
    alignItems: "center",
-   borderRadius: "12px"
+   borderRadius: "12px",
+   cursor: "pointer",
 }))
 
 const ImgCircle = styled(Box)(()=>({
@@ -124,6 +129,7 @@ export default function Redirect() {
 
     const [productImg, setProductImg] = useState([]);
     const [circColor, setCircColor]= useState({});
+    const [size, setSize] = useState(null);
 
   useEffect(() => {
     if (product) {
@@ -136,8 +142,8 @@ export default function Redirect() {
     return <p>Product not found</p>;
   }
 
-    const handleClick = (item)=>{
-        setProductImg(item)
+    const clickSize = (index)=>{
+        setSize(size === index ? null: index)
     };
 
     const colorClick = (color)=>{
@@ -147,17 +153,58 @@ export default function Redirect() {
         }))
     }
 
-
+    const sliderSettings = {
+        vertical: true,
+        verticalSwiping: true,
+        slidesToShow: 3, // Adjust this based on your layout
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: false, 
+    };
 
   return (
     <Box>
         <Fullbox>
             <Display>
                 <Left sx={{backgroundColor:"#F6F6F6"}}>
-                    <Box>{product.detail_images}</Box>
-                    <img src={productImg} alt={product.name} sx={{
-                        height:"785", width:"520px", borderRadius: "0"}}/>
-                </Left>
+                <Box sx={{ width: "100px", height: "100%", display: "flex", alignItems: "center", paddingRight: "15px" }}>
+                    <Slider {...sliderSettings}>
+                        {product.detail_images.map((image, index) => (
+                            <Box key={index} sx={{ cursor: "pointer", padding: "5px" }}>
+                                <img
+                                    src={image}
+                                    alt={`Detail ${index}`}
+                                    style={{
+                                        width: "80px",
+                                        height: "80px",
+                                        objectFit: "cover",
+                                        borderRadius: "8px"
+                                    }}
+                                    onClick={() => setProductImg(image)} // Clicking updates the main image
+                                />
+                            </Box>
+                        ))}
+                    </Slider>
+                </Box>
+                <Box sx={{ 
+                    width: "500px", 
+                    height: "700px", 
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>
+                    <img
+                        src={productImg}
+                        alt={product.name}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover", // Ensures the image fully fills the box
+                            borderRadius: "0px" // Optional rounded edges
+                        }}
+                    />
+                </Box>
+            </Left>
                 <Right>
                     {
                         header.map((item, index)=>(
@@ -196,11 +243,16 @@ export default function Redirect() {
                         <Box sx={{display: "flex", gap: "20px"}}>
                             {
                                 sizechart.map((item,index)=>(
-                                    <SizeBox key={index}><Typography
+                                    <SizeBox key={index}
+                                        onClick= {() => clickSize(index)}
+                                        sx={{
+                                            backgroundColor: size === index ? '#3C4242' : '#FFFFFF',
+                                        }}
+                                    ><Typography
                                         sx={{
                                             fontFamily: "poppinsregular",
                                             fontSize: "14px",
-                                            color: "#3C4242",
+                                            color: size === index ? '#FFFFFF' :"#3C4242",
                                         }}
                                     >{item}</Typography></SizeBox>
                                 ))
@@ -219,7 +271,7 @@ export default function Redirect() {
                                     key={index}
                                     sx={{
                                         backgroundColor: color,
-                                        border : circColor[color] ? "1px solid #3F4646" : "none",
+                                        border : circColor[color] ? "2px solid #3F4646" : "none",
                                         display: "flex",
                                         gap: "2px"
                                     }}
@@ -254,7 +306,10 @@ export default function Redirect() {
                                 padding: "10px",
                                 width: "80px",
                                 borderRadius: "8px",
-                            }}>{product.price}</Typography>
+                                fontFamily: "poppinssemibold",
+                                fontSize: "18px", 
+                                color: "#3C4242",
+                            }}>$63.00</Typography>
                         </Box>
                     </Box>
                     <Box sx={{display: "flex", gap: "10px"}}>

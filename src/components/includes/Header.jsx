@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box } from '@mui/material'
+import { Link } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import LogoImg from '../../assets/images/Logo.svg'
 import SearchIcon from '@mui/icons-material/Search';
@@ -115,9 +116,11 @@ export default function Header() {
     <Box>
      <Wrapper>
       <Box>
+        <Link to={'/Homepage'}>
           <Logo src={LogoImg}
             alt="Logo image"
           />
+        </Link>
         </Box>
         <Box
           sx={{
