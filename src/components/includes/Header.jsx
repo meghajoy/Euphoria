@@ -15,14 +15,15 @@ export default function Header() {
     {
       path: '/',
       display: 'Shop'
+      
     },
     {
-      path: '/',
-      display: 'Men'
+      path: '/Men',
+      display: 'Men',
     },
     {
-      path: '/',
-      display: 'Women'
+      path: '/Women',
+      display: 'Women',
     },
     {
       path: '/',
@@ -116,7 +117,7 @@ export default function Header() {
     <Box>
      <Wrapper>
       <Box>
-        <Link to={'/Homepage'}>
+        <Link to={'/Homepage'} sx={{textDecoration: "none"}}>
           <Logo src={LogoImg}
             alt="Logo image"
           />

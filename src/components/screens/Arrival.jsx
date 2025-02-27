@@ -44,12 +44,13 @@ export default function Arrival() {
         <Box sx={{ paddingTop: '99.8px' }}>
             <Wrapper>
                 <Heading text="New Arrival" />
-                <Box sx={{ padding: "40px" }}>
+                <Box sx={{ padding: "26px" }}>
                     <Slider {...settings}>
                         {
                             newarrival.map((item, index) => (
-                                <Link key={item.id} to={`/singlepage/${item.id}`} 
-                                    style={{ textDecoration: "none"}}>
+                                <Box>
+                                    <Link key={item.id} to={`/Product/${item.id}`} 
+                                    style={{ textDecoration: "none",color: "inherit"}}>
                                     <Box key={index}
                                         sx={{
                                             display: 'flex',
@@ -64,12 +65,13 @@ export default function Arrival() {
                                             textDecoration: "none",
                                             fontFamily: 'poppinssemibold',
                                             fontSize: '20px',
-                                            paddingTop: '10px',
+                                            paddingTop: '30px',
                                         }}>
                                             {item.category}
                                         </Typography>
                                     </Box>
                                 </Link>
+                                </Box>
                             ))
                         }
                     </Slider>

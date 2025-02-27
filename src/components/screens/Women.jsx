@@ -27,7 +27,7 @@ export default function Women() {
           }}
         >
             {menProducts.map((item) =>(
-                <Link key={item.id} to={`/singlepage/${item.id}`}
+                <Link key={item.id} to={`/Product/${item.id}`}
                   style={{
                     textDecoration: "none"
                   }}

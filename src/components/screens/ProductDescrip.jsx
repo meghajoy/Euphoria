@@ -41,7 +41,7 @@ const VertLine = styled(Box)(()=>({
     position: "absolute",
     top: "50%",
     transform: "translateY(-50%)",
-    height: "170px",
+    height: "160px",
     border: "1px solid rgb(212, 212, 212)",
 }))
 
@@ -108,12 +108,12 @@ export default function ProductDescrip() {
                 </Box>
             </Left>
             <Right>
-                <Box sx={{backgroundColor: "#F6F6F6", width: "612px", height: "185px", borderRadius:"12px", position: "relative"}}>
+                <Box sx={{backgroundColor: "#F6F6F6", width: "590px", height: "175px", borderRadius:"12px", position: "relative"}}>
                     <Box sx={{
                         position: "absolute",
                         top: "50%",
                         transform: "translateY(-50%)",
-                        width: "610px",
+                        width: "587px",
                         border: "1px solid rgb(212, 212, 212)",
                     }}></Box>
                     <VertLine sx={{
@@ -134,7 +134,7 @@ export default function ProductDescrip() {
                         {
                             details.map((item,index)=>(
                                 <Box key={index}
-                                    sx={{display: "flex", flexDirection: "column", gap: "10px", justfifyContent: "center", alignItems: "flex-start"}}
+                                    sx={{display: "flex", flexDirection: "column", gap: "9px", justfifyContent: "center", alignItems: "flex-start"}}
                                 >
                                     <Typography sx={{fontFamily: "poppinslight", fontSize: "16px", color: "#807D7E"}}>{item.detail}</Typography>
                                     <Typography sx={{fontFamily: "poppinslight", fontSize: "16px", color: "#3C4242"}}>{item.ans}</Typography>
