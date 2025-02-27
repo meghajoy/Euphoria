@@ -21,7 +21,7 @@ export default function SimilarProduct() {
 
   return (
     <Wrapper>
-        <Box sx={{paddingTop: "70px"}}>
+        <Box sx={{paddingBottom: "70px"}}>
             <Heading text="Similar Products"/>
             <Box
           sx={{

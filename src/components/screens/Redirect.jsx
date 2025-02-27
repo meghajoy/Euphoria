@@ -20,13 +20,15 @@ const Left = styled(Box)(()=>({
     display: "flex",    
 }))
 
-const Right = styled(Box)(()=>({
+const Right = styled(Box)(() => ({
     width: "50%",
-    display: "flex", 
-    flexDirection: "column",  
-    paddingTop: "5px",
-    paddingLeft: "50px", 
-}))
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: 'space-between',
+    padding: "30px 0 0 50px",
+    gap: "25px"
+  }));
+  
 
 const Circle = styled(Box)(() => ({
     borderRadius: '50%',
@@ -46,30 +48,72 @@ const SizeBox = styled(Box)(()=>({
    borderRadius: "12px"
 }))
 
-const imgCircle = styled(Box)(()=>({
+const ImgCircle = styled(Box)(()=>({
     borderRadius: "50%", 
     backgroundColor: "#F6F6F6", 
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "10px",
-    height: "10px",
+    width: "30px",
+    height: "30px",
 }))
 
+const HeadingText = styled(Typography)(()=>({
+    fontFamily: "poppinsregular", 
+    fontSize:"18px", 
+    color: "#807D7E"
+}))
+
+const sizechart = ["XS","S","M","L","XL"];
+
+const detailsbox =[
+    {
+        image: "/assets/images/credit card.svg",
+        alt: "Credit Card",
+        type: "Secure payment",
+    },
+    {
+        image: "/assets/images/Size&Fit.svg",
+        alt: "Size and Fit",
+        type: "Size and Fit",
+    },
+    {
+        image: "/assets/images/truck.svg",
+        alt: "Free shipping",
+        type: "Free shipping",
+    },
+    {
+        image: "/assets/images/Free-Shipping&Returns.svg",
+        alt: "Returns",
+        type: "Free Shipping & Returns",
+    },
+]
+
 const Details = styled(Box)(()=>({
-    display: "flex", 
-    flexDirection: "column", 
-    gap:"10px", 
-    alignItems: "flex-start"
+    display: "grid",
+    gridTemplateColumns: "auto auto",
+    gridTemplateRows: "auto auto",
+    columnGap: "135px",
+    rowGap: "35px",
+    justifyContent: "flex-start",
+    alignItems: "center",
 }))
 
 const DetailsBox = styled(Box)(()=>({
     display: "flex", 
     gap: "10px", 
-    justifyContent: "center", 
+    justifyContent: "flex-start", 
     alignItems: "center"
 }))
 
+const header = [
+    {
+        image: "/assets/images/right-arrow-light.svg",
+        category: "Shop",
+        section: "Top",
+        alt: "Arrow image"
+    }
+]
 export default function Redirect() {
 
     const {id} = useParams();
@@ -102,7 +146,8 @@ export default function Redirect() {
             [color] : !prev[color]  
         }))
     }
- 
+
+
 
   return (
     <Box>
@@ -110,43 +155,64 @@ export default function Redirect() {
             <Display>
                 <Left sx={{backgroundColor:"#F6F6F6"}}>
                     <Box>{product.detail_images}</Box>
-                    <img src={productImg} alt={product.name} />
+                    <img src={productImg} alt={product.name} sx={{
+                        height:"785", width:"520px", borderRadius: "0"}}/>
                 </Left>
                 <Right>
-                    <Box sx={{display: "flex", gap: "10px", justifyContent: "flex-start", alignItems: "center"}}>
-                        <Typography>Shop</Typography>
-                        <img src="/assets/images/right-arrow-light.svg" alt="Arrow icon" />
-                        <Typography>{product.section}</Typography>
-                        <img src="/assets/images/right-arrow-light.svg" alt="Arrow icon" />
-                        <Typography>Top</Typography>
-                    </Box>
-                        <Typography sx={{fontFamily: "poppinssemibold", fontSize: "34px", color: "#3C4242"}}>{product.category}</Typography>
-                    <Box sx={{display: "flex", gap: "10px", justifyContent: "flex-start", alignItems: "center"}}>
+                    {
+                        header.map((item, index)=>(
+                            <Box sx={{display: "flex", gap: "10px", justifyContent: "flex-start", alignItems: "center"}}>
+                                <HeadingText>{item.category}</HeadingText>
+                                <img src={item.image} alt={item.alt} />
+                                <HeadingText>{product.section}</HeadingText>
+                                <img src={item.image} alt={item.alt} />
+                                <HeadingText>{item.section}</HeadingText>
+                            </Box>
+                        ))
+                    }
+                    <Typography sx={{fontFamily: "poppinssemibold", fontSize: "34px", color: "#3C4242"}}>{product.category}</Typography>
+                    <Box sx={{display: "flex", gap: "20px", justifyContent: "flex-start", alignItems: "center"}}>
                         <img src="/assets/images/star1.png" alt="Star Rating" />
                         <Typography>3.5</Typography>
-                        <img src="/assets/images/message.svg" alt="Comments icon" />
-                        <Typography>120 comments</Typography>
-                    </Box>
-                    <Box>
-                        <Box sx={{display: "flex", gap:"10px", justifyContent: "flex-start", alignItems: "center"}}>
-                            <Typography>Select Size</Typography>
-                            <Typography>Size Guide</Typography>
-                            <img src="/assets/images/right-arrow-light.svg" alt="Arrow icon" />
-                        </Box>
-                        <Box sx={{display: "flex", gap: "10px"}}>
-                            {/* {["XS","S","M","L","XL"].map(iitem,index) => (
-                            )}
-                             */}
-                            <SizeBox><Typography>XS</Typography></SizeBox>
-                            <SizeBox><Typography>S</Typography></SizeBox>
-                            <SizeBox><Typography>M</Typography></SizeBox>
-                            <SizeBox><Typography>L</Typography></SizeBox>
-                            <SizeBox><Typography>XL</Typography></SizeBox>
+                        <Box sx={{display: "flex", gap: "10px", justifyContent: "flex-start", alignItems: "center"}}>
+                            <img src="/assets/images/message.svg" alt="Comments icon" />
+                            <Typography>120 comments</Typography>
                         </Box>
                     </Box>
-                    <Box>
-                        <Typography>Colours Available </Typography>
-
+                    <Box sx={{display: "flex", flexDirection: "column", gap: "20px"}}>
+                        <Box sx={{display: "flex", gap:"20px", justifyContent: "flex-start", alignItems: "center"}}>
+                            <Typography sx={{
+                                fontFamily: "poppinsmedium",
+                                fontSize: "18px", 
+                                color: "#3F4646", 
+                            }}>Select Size</Typography>
+                            <Typography sx={{
+                                fontFamily: "poppinsregular",
+                                fontSize: "18px", 
+                                color: "#807D7E", 
+                            }}>Size Guide</Typography>
+                            <img src="/assets/images/arrow-right.svg" alt="Arrow icon" />
+                        </Box>
+                        <Box sx={{display: "flex", gap: "20px"}}>
+                            {
+                                sizechart.map((item,index)=>(
+                                    <SizeBox key={index}><Typography
+                                        sx={{
+                                            fontFamily: "poppinsregular",
+                                            fontSize: "14px",
+                                            color: "#3C4242",
+                                        }}
+                                    >{item}</Typography></SizeBox>
+                                ))
+                            }
+                        </Box>
+                    </Box>
+                    <Box sx={{display: "flex", flexDirection: "column", gap: "20px"}}>
+                        <Typography sx={{
+                            fontFamily: "poppinsmedium",
+                            fontSize: "18px", 
+                            color: "#3F4646",
+                        }}>Colours Available </Typography>
                         <Box display="flex">
                             {["#3C4242", "#EDD146", "#EB84B0", "#9C1F35"].map((color, index) => (
                                 <Circle
@@ -163,7 +229,7 @@ export default function Redirect() {
                         }
                         </Box>
                     </Box>
-                    <Box sx={{display: "flex", gap: "10px", paddingBottom:"40px", borderBottom: "1px solid #BEBCBD"}}>
+                    <Box sx={{display: "flex", gap: "30px", paddingBottom:"40px", borderBottom: "1px solid #BEBCBD"}}>
                         <Box sx ={{
                             display: "flex",
                             gap:"20px",
@@ -193,30 +259,20 @@ export default function Redirect() {
                     </Box>
                     <Box sx={{display: "flex", gap: "10px"}}>
                         <Details>
-                            <DetailsBox>
-                                <imgCircle><img src="/assets/images/credit card.svg" alt="Credit Card" /></imgCircle>
-                                <Typography>Secure payment</Typography>
-                            </DetailsBox>
-                            <DetailsBox>
-                                <imgCircle><img src="/assets/images/Size&Fit.svg" alt="Size and Fit" /></imgCircle>
-                                <Typography>Size & Fit</Typography>
-                            </DetailsBox>
-                        </Details>
-                        <Details>
-                            <DetailsBox>
-                                <imgCircle><img src="/assets/images/truck.svg" alt="Free shipping" /></imgCircle>
-                                <Typography>Free shipping</Typography>
-                            </DetailsBox>
-                            <DetailsBox>
-                                <imgCircle><img src="/assets/images/Free-Shipping&Returns.svg" alt="Returns" /></imgCircle>
-                                <Typography>Free Shipping & Returns </Typography>
-                            </DetailsBox>
+                            {
+                                detailsbox.map((item, index) => (
+                                    <DetailsBox key={index}>
+                                    <ImgCircle>
+                                        <img src={item.image} alt={item.alt} />
+                                    </ImgCircle>
+                                    <Typography>{item.type}</Typography>
+                                    </DetailsBox>
+                                ))
+                            }
                         </Details>
                     </Box>
                 </Right>
-            </Display>       
-            <Box></Box>
-            <Box></Box>
+            </Display>  
         </Fullbox>
     </Box>
   )

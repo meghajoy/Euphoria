@@ -75,7 +75,7 @@ const details = [
 export default function ProductDescrip() {
   return (
     <Wrapper>
-        <Box sx={{paddingTop: "30px", display: "flex", gap:"20px", alignItems: "center"}}>
+        <Box sx={{paddingBlock: "70px", display: "flex", gap:"20px", alignItems: "center"}}>
             <Left>
                 <Heading text="Product Description"/>
                 <Box sx={{display: "flex", flexDirection: "column", gap: "30px", width: "600px"}}>
