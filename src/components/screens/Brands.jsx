@@ -1,6 +1,7 @@
 import React from 'react'
 import Wrapper from '../customs/Wrapper'
 import { Box, Typography } from '@mui/material'
+import { styled } from '@mui/material/styles';
 
 const logos = [
     {

@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Button, Typography } from '@mui/material'
 import Img1 from '../../assets/images/bg-2.jpg'
 import Img2 from '../../assets/images/bg-3.jpg'
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles';
 import Wrapper from '../customs/Wrapper'
 
 const images = [
@@ -44,18 +44,22 @@ const Overlay = styled(Box)(()=>({
     height: "100%",
 }))
 
+const Container = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    gap: '30px',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingTop: '10%',
+    [theme.breakpoints.down('lg')]: {
+      flexWrap: 'wrap', // Automatically gets the default theme from MUI
+    }
+  }));
+
 export default function Explore() {
+
   return (
     <Wrapper>
-        <Box
-            sx={{
-                display: 'flex',
-                gap:'30px',
-                justifyContent: 'space-between',
-                alignItems: "center",
-                paddingTop: '10%',
-            }}
-        >
+        <Container>
             {images.map((item,index)=>(
                 <BoxImage key={index}
                     sx={{
@@ -89,7 +93,7 @@ export default function Explore() {
                     </Overlay>
                 </BoxImage>
             ))}
-        </Box>
+        </Container>
     </Wrapper>
   )
 }

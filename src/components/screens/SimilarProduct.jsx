@@ -2,9 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import products from '../helpers/Products.json'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography,styled } from '@mui/material'
 import Wrapper from '../customs/Wrapper'
 import Heading from '../customs/Heading'
+
 
 
 export default function SimilarProduct() {
@@ -19,17 +20,32 @@ export default function SimilarProduct() {
     }))
   }
 
+  const Container = styled(Box)(({theme}) => ({
+    display: "grid",
+    gridTemplateColumns: "auto auto auto auto",
+    gap: "26px",
+    [theme.breakpoints.down("lg")]:{
+      gridTemplateColumns: "auto auto auto",
+      gridtemplateRows: "auto",
+      gap: "26px",
+    },
+    [theme.breakpoints.down("md")]:{
+      gridTemplateColumns: "auto auto",
+      gridtemplateRows: "auto auto",
+      gap: "45px",
+    },
+    [theme.breakpoints.down("sm")]:{
+      gridTemplateColumns: "auto",
+      gridtemplateRows: "auto",
+      gap: "45px",
+    },
+  }))
+
   return (
     <Wrapper>
         <Box sx={{paddingBottom: "70px", display: "flex", flexDirection: "column", gap: "40px"}}>
             <Heading text="Similar Products"/>
-            <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "auto auto auto auto",
-            gap: "26px",
-          }}
-        >
+            <Container>
             {similarpro.map((item) =>(
                 <Link key={item.id} to={`/singlepage/${item.id}`}
                   style={{
@@ -124,7 +140,7 @@ export default function SimilarProduct() {
                 </Box>
               </Link>
             ))}            
-        </Box> 
+        </Container> 
         </Box>
     </Wrapper>
   )

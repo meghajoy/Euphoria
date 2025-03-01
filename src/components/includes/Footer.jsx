@@ -3,7 +3,7 @@ import { Box, List, ListItem, Typography, styled } from '@mui/material'
 import Wrapper from '../customs/Wrapper'
 import { Link } from 'react-router-dom'
 
-const Bigbox = styled(Box)(()=>({
+const Bigbox = styled(Box)(({theme})=>({
     display: 'flex',
     flexDirection: 'column',
 }))
@@ -22,11 +22,15 @@ const Section = styled(Box)(()=>({
     gap: "40px"
 }))
 
-const ListSection = styled(List)(()=>({
+const ListSection = styled(List)(({theme})=>({
     display: 'flex',
     flexDirection: 'column',
     alignItems: "flex-start",
-    gap: "30px"
+    gap: "30px",
+    [theme.breakpoints.down('lg')]:{
+        textAlign: "center",
+        alignItems: "center",
+    }
 }))
 
 const Headings = styled(Typography)(()=>({
@@ -64,12 +68,24 @@ const Playstorebox = styled(Box)(()=>({
     gap: "4px"
 }))
 
+const SectionBox = styled(Box)(({theme})=>({
+    display: "flex", 
+    justifyContent: "space-around", 
+    paddingTop: "59px", 
+    gap:"100px", 
+    paddingLeft: "76px",
+    [theme.breakpoints.down('lg')]:{
+        flexDirection: "column",
+        alignItems: "center",
+    }
+}))
+
 export default function Footer() {
   return (
     <Box sx={{bgcolor: "#3C4242"}}>
         <Wrapper>
             <Bigbox>
-                    <Box sx={{display: "flex", justifyContent: "space-around", paddingTop: "59px", gap:"100px", paddingLeft: "76px"}}>
+                    <SectionBox>
                         <Section>
                             <Headings variant="h3">Need Help</Headings>
                             <Link to={`/needhelp`} style={{textDecoration: "none", cursor: "pointer"}}>
@@ -115,7 +131,7 @@ export default function Footer() {
                                 </ListSection>
                             </Link>
                         </Section>
-                    </Box>
+                    </SectionBox>
                 <Logobox >
                     <Box sx={{display: "flex", alignItems:"flex-end", justifyContent: "center", gap:"10px"}}>
                         <LogoContainer><img src="/assets/images/facebook.svg" alt="Facebook logo" /></LogoContainer>

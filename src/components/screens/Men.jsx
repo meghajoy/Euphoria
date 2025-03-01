@@ -5,14 +5,14 @@ import Heading from '../customs/Heading'
 import products from '../helpers/Products.json'
 import Arrow from '../../assets/images/arrow-right.svg'
 import { Link } from 'react-router-dom'
+import { styled } from '@mui/material/styles';
 
 export default function Men() {
   const menProducts = products.products?.Men;
   return (
     <Wrapper>
       <Box
-        sx={{
-          paddingTop: '100.28px',
+        sx={{ 
           display: 'flex',
           flexDirection: 'column',
           gap: '70px',

@@ -11,17 +11,47 @@ const Fullbox = styled(Box)(()=>({
     borderTop: "1px solid #BEBCBD"
 }))
 
-const Display = styled(Box)(()=>({
+const Display = styled(Box)(({theme})=>({
     display: 'flex',
+    [theme.breakpoints.down("md")]:{
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "center",
+    }
 }))
 
-const Left = styled(Box)(()=>({
+const Left = styled(Box)(({theme})=>({
     backgroundColor: "#F6F6F6", 
     display: "flex",  
     justifyContent: "end",
     width: "50%", 
     position: "relative",
-    overflow: "hidden"  
+    overflow: "hidden",
+    [theme.breakpoints.down("md")]:{
+        width: "100%",
+    }
+}))
+
+const SliderBox = styled(Box)(({theme})=>({
+    width: "100px", 
+    height: "100%", 
+    display: "flex", 
+    alignItems: "center", 
+    paddingRight: "15px",
+    [theme.breakpoints.down("md")]:{
+        width: "full",
+        paddingTop: "20%",
+    }
+}))
+
+const SideBox = styled(Box)(({theme})=>({
+    cursor: "pointer", 
+    padding: "5px",
+    [theme.breakpoints.down("md")]:{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+    }
 }))
 
 const Right = styled(Box)(() => ({
@@ -167,10 +197,10 @@ export default function Redirect() {
         <Fullbox>
             <Display>
                 <Left sx={{backgroundColor:"#F6F6F6"}}>
-                <Box sx={{ width: "100px", height: "100%", display: "flex", alignItems: "center", paddingRight: "15px" }}>
+                <SliderBox>
                     <Slider {...sliderSettings}>
                         {product.detail_images.map((image, index) => (
-                            <Box key={index} sx={{ cursor: "pointer", padding: "5px" }}>
+                            <SideBox key={index}>
                                 <img
                                     src={image}
                                     alt={`Detail ${index}`}
@@ -182,10 +212,10 @@ export default function Redirect() {
                                     }}
                                     onClick={() => setProductImg(image)} // Clicking updates the main image
                                 />
-                            </Box>
+                            </SideBox>
                         ))}
                     </Slider>
-                </Box>
+                </SliderBox>
                 <Box sx={{ 
                     width: "500px", 
                     height: "700px", 

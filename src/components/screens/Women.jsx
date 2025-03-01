@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
+import { styled } from '@mui/material/styles';
 import Wrapper from '../customs/Wrapper'
 import Heading from '../customs/Heading'
 import products from '../helpers/Products.json'

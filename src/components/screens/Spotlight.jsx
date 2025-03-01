@@ -1,5 +1,6 @@
 import React from 'react'
 import {Box, IconButton, Typography} from '@mui/material'
+import { styled } from '@mui/material/styles';
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

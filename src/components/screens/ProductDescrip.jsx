@@ -45,6 +45,20 @@ const VertLine = styled(Box)(()=>({
     border: "1px solid rgb(212, 212, 212)",
 }))
 
+const Container = styled(Box)(({theme})=>({
+    paddingBlock: "70px", 
+    display: "flex", 
+    gap:"20px", 
+    alignItems: "center",
+    [theme.breakpoints.down('lg')]: {
+        flexWrap: "wrap",
+        gap: "30px",
+        display: "flex",
+        alignItems: "center",   
+
+    }
+}))
+
 const details = [
     {
         detail: "Fabric",
@@ -75,7 +89,7 @@ const details = [
 export default function ProductDescrip() {
   return (
     <Wrapper>
-        <Box sx={{paddingBlock: "70px", display: "flex", gap:"20px", alignItems: "center"}}>
+        <Container>
             <Left>
                 <Heading text="Product Description"/>
                 <Box sx={{display: "flex", flexDirection: "column", gap: "30px", width: "600px"}}>
@@ -144,7 +158,7 @@ export default function ProductDescrip() {
                     </Box>
                 </Box>
             </Right>
-        </Box>
+        </Container>
     </Wrapper>
   )
 }

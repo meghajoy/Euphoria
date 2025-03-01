@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import LogoImg from '../../assets/images/Logo.svg'
 import SearchIcon from '@mui/icons-material/Search';
 import LikeIcon from '../../assets/images/wishlist.svg';
+import MenuIcon from '@mui/icons-material/Menu';
 import UserIcon from '../../assets/images/account.svg';
 import CartIcon from '../../assets/images/cart.svg';
 import InputBase from '@mui/material/InputBase';
@@ -51,15 +52,17 @@ export default function Header() {
   const Logo = styled("img")(({theme})=>({
     width:'91.16px',
     height:'45px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    [theme.breakpoints.down('md')]:{
+      width: "85px",
+      height: "40px"
+    }
   }))
 //Nav List
   const NavList = styled(Box)(({theme})=>({
     display:'flex',
-    gap: theme.spacing(2),
-    justifyContent:'center',
     color:'#807D7E',
-    padding:'12px 0',
+    padding:'12px 10px',
     cursor: 'pointer',
     fontSize:'22px',
     '& a':{
@@ -70,7 +73,14 @@ export default function Header() {
     '&:hover':{
       color:'#3C4242',
       fontWeight:'bold'
-    }
+    },
+    [theme.breakpoints.down("lg")]:{
+      fontSize: "18px",
+      padding: "12px 20px"
+    },
+    [theme.breakpoints.down("md")]:{
+      display: "none",
+    },
   }))
 //Search Bar
   const Search = styled(Box)(({theme})=>({
@@ -82,6 +92,10 @@ export default function Header() {
     borderRadius:'8px',
     width: '267px',
     height:'44px',
+    [theme.breakpoints.down('lg')]:{
+      width: "44px",
+      height: "44px",
+    }
   }))
   const SearchIconWrapper =styled(Box)(({theme})=>({
     
@@ -89,7 +103,10 @@ export default function Header() {
   const StyledInputBase = styled(InputBase)(({theme})=>({
     fontFamily: 'poppinsregular',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    [theme.breakpoints.down('lg')]:{
+      display: "none"
+    }
   }))
 
 //Nav Icons - Like, User, Cart
@@ -113,10 +130,24 @@ export default function Header() {
     }
   }))
 
+  //Menu Icon
+  const CustomMenuIcon = styled(MenuIcon)(({theme})=>({
+    color: "#807D7E",
+    display: "none",
+    cursor: 'pointer',
+    [theme.breakpoints.down("md")]:{
+        display:'block',
+    },
+}))
+
   return (
-    <Box>
      <Wrapper>
-      <Box>
+      <Box sx={{
+        display: 'flex',
+        gap: "20px",
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}>
         <Link to={'/Homepage'} sx={{textDecoration: "none"}}>
           <Logo src={LogoImg}
             alt="Logo image"
@@ -130,6 +161,7 @@ export default function Header() {
             justifyContent: 'space-between'
           }}
         >
+          <CustomMenuIcon/>
           {
             nav_bar.map((item,index)=>(
               <NavList>
@@ -182,7 +214,5 @@ export default function Header() {
           </Box>
         </Box>
      </Wrapper>
-    </Box>
-    
   )
 }
