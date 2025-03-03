@@ -164,7 +164,7 @@ export default function Header() {
           <CustomMenuIcon/>
           {
             nav_bar.map((item,index)=>(
-              <NavList>
+              <NavList key={index}>
                 {item.display}
               </NavList>
             ))
