@@ -37,12 +37,61 @@ const DescSamllTypo = styled(Typography)(()=>({
     alignItems: "center"
 }))
 
-const VertLine = styled(Box)(()=>({
+const VertLine = styled(Box)(({theme})=>({
     position: "absolute",
     top: "50%",
     transform: "translateY(-50%)",
     height: "160px",
     border: "1px solid rgb(212, 212, 212)",
+    [theme.breakpoints.down('md')]: {
+        height: "140px",
+    }
+}))
+
+const HoriLine = styled(Box)(({theme})=>({
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    width: "587px",
+    border: "1px solid rgb(212, 212, 212)",
+    [theme.breakpoints.down('md')]: {
+        width: "539px",
+    }
+}))
+
+const RightBoxType = styled(Typography)(({theme})=>({
+    fontFamily: "poppinslight", 
+    fontSize: "16px",
+    [theme.breakpoints.down('md')]: {
+        fontSize: "14px",
+    }
+}))
+
+const RightBox = styled(Box)(({theme})=>({
+    backgroundColor: "#F6F6F6", 
+    width: "590px", 
+    height: "175px", 
+    borderRadius:"12px", 
+    position: "relative",
+    [theme.breakpoints.down('md')]: {
+        width: "540px", 
+        height: "145px",
+    }
+}))
+
+const RightBoxContent = styled(Box)(({theme})=>({
+    display: "grid",
+    gridTemplateColumns: "auto auto auto",
+    gridTemplateRows: "auto auto",
+    gap: "30px",
+    alignItems: "center",
+    padding: "20px",
+    [theme.breakpoints.down('md')]: {
+        width: "540px", 
+        height: "145px",
+        gap: "10px",
+        padding: "5px",
+    }
 }))
 
 const Container = styled(Box)(({theme})=>({
@@ -56,6 +105,13 @@ const Container = styled(Box)(({theme})=>({
         display: "flex",
         alignItems: "center",   
 
+    }
+}))
+
+const BioWashed = styled(Box)(({theme})=>({
+    width: "600px",
+    [theme.breakpoints.down('lg')]: {
+        width: "500px",
     }
 }))
 
@@ -108,7 +164,7 @@ export default function ProductDescrip() {
                             </DescSmall>
                         </Box>
                     </Box>
-                    <Box sx={{width: "600px"}}>
+                    <BioWashed>
                         <Typography sx={{
                             fontSize:"14px", 
                             fontFamily: "poppinslight", 
@@ -118,45 +174,31 @@ export default function ProductDescrip() {
                             alignItems: "center"
                         }}
                         >100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide  all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.</Typography>
-                    </Box>
+                    </BioWashed>
                 </Box>
             </Left>
             <Right>
-                <Box sx={{backgroundColor: "#F6F6F6", width: "590px", height: "175px", borderRadius:"12px", position: "relative"}}>
-                    <Box sx={{
-                        position: "absolute",
-                        top: "50%",
-                        transform: "translateY(-50%)",
-                        width: "587px",
-                        border: "1px solid rgb(212, 212, 212)",
-                    }}></Box>
+                <RightBox>
+                    <HoriLine ></HoriLine>
                     <VertLine sx={{
                         left: "35%"
                     }}></VertLine>
                     <VertLine sx={{
                         right: "35%"
                     }}></VertLine>
-                    <Box
-                        sx={{display: "grid",
-                            gridTemplateColumns: "auto auto auto",
-                            gridTemplateRows: "auto auto",
-                            gap: "30px",
-                            alignItems: "center",
-                            padding: "20px",
-                         }}
-                    >
+                    <RightBoxContent>
                         {
                             details.map((item,index)=>(
                                 <Box key={index}
                                     sx={{display: "flex", flexDirection: "column", gap: "9px", justfifyContent: "center", alignItems: "flex-start"}}
                                 >
-                                    <Typography sx={{fontFamily: "poppinslight", fontSize: "16px", color: "#807D7E"}}>{item.detail}</Typography>
-                                    <Typography sx={{fontFamily: "poppinslight", fontSize: "16px", color: "#3C4242"}}>{item.ans}</Typography>
+                                    <RightBoxType sx={{ color: "#807D7E"}}>{item.detail}</RightBoxType>
+                                    <RightBoxType sx={{ color: "#3C4242"}}>{item.ans}</RightBoxType>
                                 </Box>
                             ))
                         }
-                    </Box>
-                </Box>
+                    </RightBoxContent>
+                </RightBox>
             </Right>
         </Container>
     </Wrapper>

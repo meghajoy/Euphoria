@@ -8,11 +8,17 @@ const Bigbox = styled(Box)(({theme})=>({
     flexDirection: 'column',
 }))
 
-const Logobox = styled(Box)(()=>({
+const Logobox = styled(Box)(({theme})=>({
     display: 'flex',
     justifyContent: "space-between",
     paddingBottom:"50px",
     paddingLeft: "83px",
+    [theme.breakpoints.down('lg')]:{
+        flexDirection: "column",
+        gap: "20px",
+        paddingTop: "80px",
+        alignItems: "center",
+    }
 }))
 
 const Section = styled(Box)(()=>({
@@ -74,9 +80,20 @@ const SectionBox = styled(Box)(({theme})=>({
     paddingTop: "59px", 
     gap:"100px", 
     paddingLeft: "76px",
-    [theme.breakpoints.down('lg')]:{
+    [theme.breakpoints.down('md')]:{
         flexDirection: "column",
         alignItems: "center",
+    }
+}))
+
+const Copyright = styled(Typography)(({theme})=>({
+        fontSize: "18px",
+        fontFamily: "poppinssemibold",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+    [theme.breakpoints.down('md')]:{
+        fontSize: "14px",
     }
 }))
 
@@ -175,7 +192,7 @@ export default function Footer() {
                     alignItems: "center",
                     justifyContent: "center",
                 }}>
-                    <Typography>Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</Typography>
+                    <Copyright>Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</Copyright>
                 </Box>
             </Bigbox>    
         </Wrapper>
