@@ -1,9 +1,20 @@
 import React from 'react'
 import { Button } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
+const Btn = styled(Button)(({theme})=>({
+  [theme.breakpoints.down("lg")]:{
+    height: "55px",
+    width: "240px",
+  },
+  [theme.breakpoints.down("md")]:{
+    height: "51px",
+    width: "230px",
+  }
+}))
 export default function ShopNow() {
   return (
-    <Button
+    <Btn
         sx={{
           backgroundColor: "#FFFFFF",
           color: "#3C4242",
@@ -18,6 +29,6 @@ export default function ShopNow() {
             boxShadow: "none",
           }
         }}
-    >Shop Now</Button>
+    >Shop Now</Btn>
   )
 }

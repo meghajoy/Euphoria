@@ -51,7 +51,9 @@ const Container = styled(Box)(({ theme }) => ({
     alignItems: 'center',
     paddingTop: '10%',
     [theme.breakpoints.down('lg')]: {
-      flexWrap: 'wrap', // Automatically gets the default theme from MUI
+      flexWrap: 'wrap',
+      display: 'flex',
+      justifyContent: 'center',
     }
   }));
 

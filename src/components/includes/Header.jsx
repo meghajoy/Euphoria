@@ -148,7 +148,7 @@ export default function Header() {
         justifyContent: 'space-between',
         alignItems: 'center',
       }}>
-        <Link to={'/Homepage'} sx={{textDecoration: "none"}}>
+        <Link to={'/'} sx={{textDecoration: "none"}}>
           <Logo src={LogoImg}
             alt="Logo image"
           />

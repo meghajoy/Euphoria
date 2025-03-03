@@ -4,10 +4,12 @@ import {Box} from '@mui/material'
 export default function Wrapper({children, disablePadding = false}) {
   return (
     <Box
-        sx={{paddingInline : disablePadding ? 0:"100px",
+        sx={{
             display:"flex",
-            flexDirection: 'row',
-            alignItems: 'center',       
+            justifyContent: 'center',
+            maxWidth: '1440px',
+            margin: '0 auto',
+            width: '90%',      
         }}
     >
       {children}

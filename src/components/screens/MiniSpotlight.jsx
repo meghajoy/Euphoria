@@ -11,8 +11,7 @@ import { styled } from '@mui/material/styles';
     display: 'flex',
     paddingBlock: '10%',
     borderRadius: '12px',
-    height: '640px',
-    width: '1188px',
+    height: '604px',
     [theme.breakpoints.down('lg')]: {
       height:" 600px",
       width: "1150px",
@@ -24,9 +23,30 @@ import { styled } from '@mui/material/styles';
   }))
 
   const Left = styled(Box)(({theme})=>({
+    backgroundImage: `url(${Img1})`,
   }))
 
   const Right = styled(Box)(({theme})=>({
+  }))
+
+  const TextContent = styled(Box)(({theme})=>({
+    paddingLeft: '74px',
+    paddingBlock: '183px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  }))
+
+  const TextTop = styled(Typography)(({theme})=>({
+    fontFamily: "poppinsbold",
+    fontSize: '26px',
+    color: 'white',
+  }))
+
+  const TextPara = styled(Typography)(({theme})=>({
+    fontFamily: "poppinslight",
+    fontSize: '20px',
+    color: 'white',
   }))
 
   const RightImg = styled("img")(({theme}) => ({
@@ -45,39 +65,12 @@ export default function MiniSpotlight() {
   return (
     <Wrapper>
         <MainBox >
-            <Left
-                sx={{
-                    backgroundImage: `url(${Img1})`,
-                    width: '590px'
-                }}
-            >
-                <Box
-                sx={{
-                    paddingLeft: '74px',
-                    paddingBlock: '183px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    width: "466px",
-                    height: "282px",
-
-                }}>
-                    <Typography variant='h3'
-                        sx={{
-                            fontFamily: "poppinsbold",
-                            fontSize: '34px',
-                            color: 'white',
-                        }}
-                    >WE MADE YOUR EVERYDAY FASHION BETTER!</Typography>
-                    <Typography variant='h2'
-                        sx={{
-                            fontFamily: "poppinslight",
-                            fontSize: '20px',
-                            color: 'white',
-                        }}
-                    >In our journey to improve everyday fashion, euphoria presents EVERYDAY wear range - Comfortable & Affordable fashion 24/7</Typography>
+            <Left>
+                <TextContent>
+                    <TextTop variant='h3'>WE MADE YOUR EVERYDAY FASHION BETTER!</TextTop>
+                    <TextPara variant='h2'>In our journey to improve everyday fashion, euphoria presents EVERYDAY wear range - Comfortable & Affordable fashion 24/7</TextPara>
                     <ShopNow />
-                </Box>
+                </TextContent>
             </Left>
             <Right>
                 <RightImg src={Img2} alt="Image" />
